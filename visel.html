@@ -3,18 +3,15 @@
 <head>
 </head>
 <body>
-<h1>Виселица!</h1>
-
 <script>
-
 var words = [
-"клоун",
-"вафля",
+"мышь",
 "программа",
 "макака",
 "компьютер",
 "клавиатура"
 ];
+var name = prompt("Введите ваше имя");
 var word = words[Math.floor(Math.random() * words.length)];
 
 var answerArray = [];
@@ -28,13 +25,13 @@ while (remainingLetters > 0) {
 
 alert(answerArray.join(" "));
 
-var guess = prompt("Угадайте букву, или нажмите Отмена для выхода из игры.");
+var guess = prompt(name + ", Угадай букву, или нажми Отмена для того,чтоб выйти из игры.");
 
 if (guess === null) {
 
 break;
 } else if (guess.length !== 1) {
-alert("Пожалуйста, введите одичную букву.");
+alert(name + ", Пожалуйста, введи одну букву.");
 } else {
 
 for (var j = 0; j < word.length; j++) {
@@ -46,7 +43,7 @@ remainingLetters--;
 }
 }
 alert(answerArray.join(" "));
-alert("Отлично! Было загадано слово " + word);
+alert("Отлично, " + name + "! Было загадано слово " + word);
 </script>
 </body>
 </html>
